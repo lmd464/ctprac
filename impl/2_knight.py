@@ -11,20 +11,16 @@ c = num_list[alpha_list.index(file_input[0])]
 counter = 0
 
 # 이동 가능한 경우를 리스트로 묶기
-movements = [(-2, -1), (-2, 1), (2, -1), (2, 1), 
-            (-1, -2), (-1, 2), (1, -2), (1, 2)]
-
+movements = [(-2, -1), (-2, 1), (2, -1), (2, 1), (-1, -2), (-1, 2), (1, -2),
+             (1, 2)]
 
 # *** 이동 "가능" 한 경우의 수 ***
 for movement in movements:
-  if r + movement[0] <= 8 and r + movement[0] >= 1 \
-    and c + movement[1] <= 8 and c + movement[1] >= 1:
-    counter += 1
+    if r + movement[0] <= 8 and r + movement[0] >= 1 \
+      and c + movement[1] <= 8 and c + movement[1] >= 1:
+        counter += 1
 
 print(counter)
-
-
-
 '''
 # 노가다 : 이렇게 하지 말 것
 
