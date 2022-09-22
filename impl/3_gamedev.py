@@ -38,7 +38,7 @@ def get_next_position(row, col, dir):
             dr = dr_list[i]
             dc = dc_list[i]
 
-            # 인덱스 범위 안벗어남 , 방문 X , 바다(1) 아님
+            # 인덱스 범위 안벗어남(바다 X) , 방문 X , 바다(1) 아님
             # -> 전부 만족 시 이동 후 좌표 반환
             if 0 <= row + dr and row + dr <= N - 1 and \
                 0 <= col + dc and col + dc <= M - 1 and \
@@ -63,7 +63,7 @@ def get_back_postition(row, col, dir):
             dr = dr_list[i]
             dc = dc_list[i]
 
-            # 인덱스 범위 안벗어남(바다X) , 방문은 상관 X , 바다(1) 아님
+            # 인덱스 범위 안벗어남(바다 X) , 방문은 상관 X , 바다(1) 아님
             # -> 전부 만족 시 이동 후 좌표 반환
             if 0 <= row + dr and row + dr <= N - 1 and \
                 0 <= col + dc and col + dc <= M - 1 and \
@@ -88,12 +88,13 @@ while True:
         else:
             row, col = new_row, new_col
             counter = 0
+            continue
 
     # 회전 -> 앞 위치 구하고 비교
     turn_left()
     new_row, new_col = get_next_position(row, col, dir)
 
-    # 다음 위치와 현재 위치가 같음 -> 이동 X, 카운터만 증가 후 반복
+    # 다음 위치와 현재 위치가 같음 -> 이동 X, 카운터만 증가 후 continue
     if row == new_row and col == new_col:
         counter += 1
         continue
