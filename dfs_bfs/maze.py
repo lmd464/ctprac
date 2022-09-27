@@ -30,7 +30,7 @@ def bfs(r, c):
         if point[0] == row - 1 and point[1] == col - 1:
             return matrix[point[0]][point[1]]
 
-        #  (최소경로이므로 방문한곳 다시 안감)
+        # 이웃 좌표 구함
         for diff in diff_list:
             dr, dc = point[0] + diff[0], point[1] + diff[1]
 
